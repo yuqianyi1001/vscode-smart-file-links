@@ -1,0 +1,73 @@
+{
+  "name": "smart-file-links",
+  "displayName": "Smart File Links",
+  "description": "Make variable-based file:// links in text documents clickable in VS Code.",
+  "version": "0.1.0",
+  "publisher": "jwu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/smart-file-links.git"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown",
+    "onLanguage:yaml",
+    "onLanguage:plaintext"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Smart File Links",
+      "properties": {
+        "smartFileLinks.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable Smart File Links."
+        },
+        "smartFileLinks.languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "markdown",
+            "yaml",
+            "plaintext"
+          ],
+          "description": "Language IDs for which Smart File Links should be enabled."
+        },
+        "smartFileLinks.debug": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable debug logging for Smart File Links."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./dist/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.75.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "@vscode/test-electron": "^2.2.3",
+    "eslint": "^8.34.0",
+    "glob": "^13.0.6",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5"
+  }
+}
