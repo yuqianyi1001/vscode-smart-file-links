@@ -3,10 +3,10 @@
   "displayName": "Smart File Links",
   "description": "Make variable-based file:// links in text documents clickable in VS Code.",
   "version": "0.1.0",
-  "publisher": "jwu",
+  "publisher": "JeffWoo",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/smart-file-links.git"
+    "url": "https://github.com/yuqianyi1001/vscode-smart-file-links.git"
   },
   "engines": {
     "vscode": "^1.75.0"
